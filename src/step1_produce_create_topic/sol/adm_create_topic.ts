@@ -11,7 +11,7 @@ const admin = kafka.admin();
 const run = async () => {
   await admin.connect();
 
-  const result = await admin.createTopics({topics: [{topic}]})
+  const result = await admin.createTopics({topics: [{topic, numPartitions: 3}]})
   console.log(result)
   await admin.disconnect();
 };

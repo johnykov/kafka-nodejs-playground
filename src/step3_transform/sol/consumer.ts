@@ -1,25 +1,25 @@
 import { kafka, topic } from '../../kafka_provider'
 import { ConsumerEvents, EachMessagePayload } from 'kafkajs'
 /*
-npx tsx --env-file=.env src/step2_consume/consumer.ts
-npx tsx --env-file=.env.local src/step2_consume/consumer.ts
+npx tsx --env-file=.env src/step3_transform/sol/consumer.ts
+npx tsx --env-file=.env.local src/step3_transform/sol//consumer.ts
 */
 
-const consumer = kafka.consumer({groupId: 'my-test-consumer'});
+const consumer = kafka.consumer({groupId: 'transformed-consumer'});
 const run = async () => {
   await consumer.connect();
   process.on('SIGINT', gracefullyClose)
   process.on('SIGTERM', gracefullyClose)
-  await consumer.subscribe({ topic, fromBeginning: true })
+  await consumer.subscribe({ topic:'transformed', fromBeginning: true })
   await consumer.run({
     eachMessage: async ({ topic, partition, message }: EachMessagePayload) => {
       console.log({
+        key: message.key?.toString(),
         value: message.value?.toString(),
       })
     },
   })
 
-  consumer.on('consumer.heartbeat', (ev)=> console.log(new Date(), ev))
 };
 
 async function gracefullyClose() {

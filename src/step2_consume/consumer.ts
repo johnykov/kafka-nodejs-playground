@@ -20,7 +20,7 @@ const run = async () => {
       })
     },
   })
-
+  // TODO: figure out what's wrong
   await consumer.disconnect();
 };
 

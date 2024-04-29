@@ -1,0 +1,18 @@
+@namespace("english.ila_content")
+protocol ItemBaseInteractions {
+	record Text {
+		string id;
+		string text;
+	}
+
+	record Image {
+		string id;
+		string url;
+	}
+
+	record Audio {
+		string id;
+		string url;
+		string transcript;
+	}
+}

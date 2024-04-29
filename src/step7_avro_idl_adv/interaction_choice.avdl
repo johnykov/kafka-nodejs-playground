@@ -1,0 +1,11 @@
+@namespace("english.ila_content")
+protocol ItemChoiceInteractions {
+	import idl "interaction_base.avdl";
+	
+	record ChoiceInteraction {
+		string id;
+		union{null, int} maxScore = null;
+		union{Text, Image, Audio} key;
+		array<union{Text, Image, Audio}> distractors = [];
+	}
+}

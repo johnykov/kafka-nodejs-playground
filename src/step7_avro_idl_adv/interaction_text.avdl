@@ -1,0 +1,10 @@
+@namespace("english.ila_content")
+protocol ItemTextInteractions {
+	import idl "interaction_base.avdl";
+
+	record TextEntryInteraction {
+		string id;
+		union{null, int} maxScore = null;
+		array<Text> keys = [];
+	}
+}

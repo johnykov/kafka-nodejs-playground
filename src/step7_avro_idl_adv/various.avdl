@@ -1,0 +1,15 @@
+@namespace("english.ila_content")
+protocol ItemVarious {
+	record DecorativeImage {
+		string imageId;
+		string imageTitle;
+		string url;
+		string contentType;
+	}
+
+	record Stimulus {
+		union{null, string} text = null;
+		union{null, string} audio = null;
+		union{null, string} video = null;
+	}
+}
