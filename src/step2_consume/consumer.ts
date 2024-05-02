@@ -4,9 +4,9 @@ import { EachMessagePayload } from 'kafkajs'
 npx tsx --env-file=.env src/step2_consume/consumer.ts
 npx tsx --env-file=.env.local src/step2_consume/consumer.ts
 
-kafka-consumer-groups --bootstrap-server localhost:9092 --list
-kafka-consumer-groups --bootstrap-server localhost:9092 --group my-test-consumer --describe
-kafka-consumer-groups --bootstrap-server localhost:9092 --topic submissions --group calculator-group --reset-offsets --to-earliest --execute
+kafka-consumer-groups --bootstrap-server localhost:29092 --list
+kafka-consumer-groups --bootstrap-server localhost:29092 --group my-test-consumer --describe
+kafka-consumer-groups --bootstrap-server localhost:29092 --topic submissions --group calculator-group --reset-offsets --to-earliest --execute
 */
 
 const consumer = kafka.consumer({groupId: 'my-test-consumer'});

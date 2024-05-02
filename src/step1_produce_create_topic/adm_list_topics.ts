@@ -4,7 +4,7 @@ RUN:
 npx tsx --env-file=.env src/step1_produce_create_topic/adm_list_topics.ts
 npx tsx --env-file=.env.local src/step1_produce_create_topic/adm_list_topics.ts
 similar
-kafka-topics --list --bootstrap-server localhost:9092
+kafka-topics --list --bootstrap-server localhost:29092
 */
 
 const admin = kafka.admin();

@@ -11,7 +11,7 @@
 5. zauważ: `"error":"This server does not host this topic-partition",`
 6. wylistuj topiki `adm_list_topics`, porównaj efekt
    ```shell
-   kafka-consumer-groups --bootstrap-server localhost:9092 --list
+   kafka-consumer-groups --bootstrap-server localhost:29092 --list
    ```
 7. pick solution: 
    - either enable auto.create.topics or 
@@ -20,7 +20,7 @@
 8. powtórz producer
 9. describe topic
    ```shell
-   kafka-topics --bootstrap-server localhost:9092 --describe --topic <topicname>
+   kafka-topics --bootstrap-server localhost:29092 --describe --topic <topicname>
    ```
   - ile partycji, replic, ISR (in-sync-replicas)
 10. compression https://kafka.js.org/docs/producing

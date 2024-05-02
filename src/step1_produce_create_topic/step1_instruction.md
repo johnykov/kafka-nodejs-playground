@@ -11,7 +11,7 @@
 5. notice: `"error":"This server does not host this topic-partition",`
 6. list topics with `adm_list_topics`, verify effect with
    ```shell
-   kafka-consumer-groups --bootstrap-server localhost:9092 --list
+   kafka-consumer-groups --bootstrap-server localhost:29092 --list
    ```
 7. pick solution: either enable auto.create.topics or write script `adm_create_topic`
 8. repeat producer
