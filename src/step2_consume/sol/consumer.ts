@@ -1,8 +1,7 @@
 import { kafka, topic } from '../../kafka_provider'
 import { ConsumerEvents, EachMessagePayload } from 'kafkajs'
 /*
-npx tsx --env-file=.env src/step2_consume/consumer.ts
-npx tsx --env-file=.env.local src/step2_consume/consumer.ts
+npm start src/step2_consume/sol/consumer.ts
 */
 
 const consumer = kafka.consumer({groupId: 'my-test-consumer'});
