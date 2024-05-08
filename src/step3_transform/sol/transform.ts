@@ -1,8 +1,7 @@
 import { kafka, topic } from '../../kafka_provider'
 import { EachMessagePayload } from 'kafkajs'
 /*
-npx tsx --env-file=.env src/step3_transform/sol/transform.ts
-npx tsx --env-file=.env.local src/step3_transform/sol/transform.ts
+npm start src/step3_transform/sol/transform.ts
 kafka-topics --create --bootstrap-server localhost:29092 \
   --partitions 3 --replication-factor 1 \
   --topic transformed1

@@ -1,8 +1,7 @@
 import { kafka, topic } from '../kafka_provider'
 import { EachMessagePayload } from 'kafkajs'
 /*
-npx tsx --env-file=.env src/step2_consume/consumer.ts
-npx tsx --env-file=.env.local src/step2_consume/consumer.ts
+npm start src/step2_consume/consumer.ts
 
 kafka-consumer-groups --bootstrap-server localhost:29092 --list
 kafka-consumer-groups --bootstrap-server localhost:29092 --group my-test-consumer --describe
@@ -20,7 +19,7 @@ const run = async () => {
       })
     },
   })
-  // TODO: figure out what's wrong
+  // TODO: figure out what's wrong, why quit so early
   await consumer.disconnect();
 };
 

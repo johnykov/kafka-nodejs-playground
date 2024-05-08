@@ -1,7 +1,7 @@
-@namespace("english.ila_content")
+@namespace("com.example")
 protocol ItemChoiceInteractions {
 	import idl "interaction_base.avdl";
-	
+
 	record ChoiceInteraction {
 		string id;
 		union{null, int} maxScore = null;

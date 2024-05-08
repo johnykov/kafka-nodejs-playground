@@ -5,7 +5,7 @@ import _ from 'lodash'
 export async function avroSchemaFromIdl() {
   const convert = async (name: string) =>
     avdlToAVSCAsync(path.join(__dirname, name))
-  const mainAvroSchema = await convert('itemPublishingBeeSchema.avdl')
+  const mainAvroSchema = await convert('itemPublishingSchema.avdl')
 
   const interactionChoiceSchemas = await convert('interaction_choice.avdl')
   const interactionTextSchemas = await convert('interaction_text.avdl')

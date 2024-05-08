@@ -1,8 +1,7 @@
 import { kafka, topic } from '../kafka_provider'
 import { createRandomUser } from './domain'
 /*
-npx tsx --env-file=.env src/step3_transform/continuous_producer.ts
-npx tsx --env-file=.env.local src/step3_transform/continuous_producer.ts
+npm start src/step3_transform/continuous_producer.ts
 */
 
 const producer = kafka.producer();

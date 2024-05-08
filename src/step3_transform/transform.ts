@@ -1,9 +1,7 @@
 import { kafka, topic } from '../kafka_provider'
 import { EachMessagePayload } from 'kafkajs'
 /*
-npx tsx --env-file=.env src/step3_transform/transform.ts
-npx tsx --env-file=.env.local src/step3_transform/transform.ts
-
+npm start src/step3_transform/transform.ts
 */
 
 const consumer = kafka.consumer({groupId: 'my-transformer'});

@@ -1,4 +1,4 @@
-@namespace("english.ila_content")
+@namespace("com.example")
 protocol ItemTextInteractions {
 	import idl "interaction_base.avdl";
 

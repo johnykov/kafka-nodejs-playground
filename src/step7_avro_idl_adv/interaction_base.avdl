@@ -1,4 +1,4 @@
-@namespace("english.ila_content")
+@namespace("com.example")
 protocol ItemBaseInteractions {
 	record Text {
 		string id;

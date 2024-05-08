@@ -1,7 +1,6 @@
 import { kafka, topic } from '../kafka_provider'
 /*
-npx tsx --env-file=.env src/step1_produce_create_topic/producer.ts
-npx tsx --env-file=.env.local src/step1_produce_create_topic/producer.ts
+npm start src/step1_produce_create_topic/producer.ts
 */
 
 const producer = kafka.producer();

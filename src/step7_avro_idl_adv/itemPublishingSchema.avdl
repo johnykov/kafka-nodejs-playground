@@ -1,4 +1,4 @@
-@namespace("english.ila_content")
+@namespace("com.example")
 protocol ItemPublishingProjection {
 	import idl "interaction_choice.avdl";
 	import idl "interaction_text.avdl";
