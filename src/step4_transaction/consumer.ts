@@ -1,15 +1,15 @@
-import { kafka } from '../../kafka_provider'
+import { kafka } from '../kafka_provider'
 import { EachMessagePayload } from 'kafkajs'
-import { topicName } from '../topic'
 /*
 npm start src/step4_transaction/sol/consumer.ts
 */
+
 const consumer = kafka.consumer({groupId: 'transactional-consumer'});
 const run = async () => {
   await consumer.connect();
   process.on('SIGINT', gracefullyClose)
   process.on('SIGTERM', gracefullyClose)
-  await consumer.subscribe({ topic:topicName, fromBeginning: true })
+  await consumer.subscribe({ topic:'<CHANGEME>', fromBeginning: true }) //TODO:
   await consumer.run({
     eachMessage: async ({ topic, partition, message }: EachMessagePayload) => {
       console.log({
@@ -19,6 +19,7 @@ const run = async () => {
     },
   })
 };
+
 async function gracefullyClose() {
   await consumer.disconnect()
 }

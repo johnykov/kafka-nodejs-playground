@@ -3,8 +3,8 @@
 2. napraw błąd wczesnego kończenia skryptu
 3. zasyskrubj się na event HEARTBEAT, znajdź interwał w jakim broker pinguje konsumenta
 4. uruchom `consumer.ts` jeszcze raz, zaobserwuj procesowanie
-5. uruchom producer ze step1 `npm start src/step1_produce_create_topic/producer.ts`
-5. wylistuj grupy konsumentów
+5. uruchom producer ze step1 `npm start src/step1_produce_create_topic/producer.ts` jeśli chcesz zobaczyć ruch
+6. wylistuj grupy konsumentów
    ```
    kafka-consumer-groups --bootstrap-server localhost:29092 --list
    ```
@@ -19,3 +19,4 @@
    --reset-offsets --to-earliest --execute
    ```
    sprawdź CURRENT-OFFSET oraz LAG ponownie
+9. zapoznaj się z definicją ustawienia 'from-beggining' https://kafka.js.org/docs/consuming#a-name-from-beginning-a-frombeginning
