@@ -1,7 +1,7 @@
 import { kafka, topic } from '../../kafka_provider'
 import { ConsumerEvents, EachMessagePayload } from 'kafkajs'
 /*
-npm start src/step3_transform/sol//consumer.ts
+npm start src/step3_transform/sol/consumer.ts
 */
 
 const consumer = kafka.consumer({groupId: 'transformed-consumer'});

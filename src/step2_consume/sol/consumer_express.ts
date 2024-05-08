@@ -15,12 +15,6 @@ async function initConsumer() {
   consumer.on('consumer.heartbeat', (ev)=> console.log(new Date(), ev))
 }
 
-const app = express()
-app.use(express.json());
-app.use(express.urlencoded({
-  extended: false,
-}));
-
 const run = async () => {
   await consumer.subscribe({topic, fromBeginning: true})
   await consumer.run({
@@ -34,13 +28,20 @@ const run = async () => {
 
 initConsumer().then(()=> run()).catch(e => console.error('[example/consumer] e.message', e));
 
-const shutDown = () => {
+// express below
+const shutDown = async () => {
   console.debug('SIGTERM signal received: closing HTTP server')
-  consumer.disconnect()
+  await consumer.disconnect()
   server.close(() => console.debug('HTTP server closed'))
 }
 process.on('SIGTERM', shutDown);
 process.on('SIGINT', shutDown);
+
+const app = express()
+app.use(express.json());
+app.use(express.urlencoded({
+  extended: false,
+}));
 
 const server = app.listen(9123, () => {
   console.log(`Server is listening on ${9123}`);

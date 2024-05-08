@@ -2,9 +2,6 @@ import { kafka, topic } from '../../kafka_provider'
 import { EachMessagePayload } from 'kafkajs'
 /*
 npm start src/step3_transform/sol/transform.ts
-kafka-topics --create --bootstrap-server localhost:29092 \
-  --partitions 3 --replication-factor 1 \
-  --topic transformed1
 */
 
 const consumer = kafka.consumer({groupId: 'my-transformer'});
@@ -17,11 +14,11 @@ const run = async () => {
   await consumer.subscribe({topic, fromBeginning: true})
   await consumer.run({
     eachMessage: async ({topic, partition, message}: EachMessagePayload) => {
-
-      const recordMeta= await producer.send({
+      const payload = message.value!.toString()
+      const recordMeta = await producer.send({
         topic: 'transformed',
         messages: [
-          {key: '<CHANGE_ME>', value: message.value?.toString()!},
+          {key: JSON.parse(payload).subscriptionTier, value: payload},
         ],
       });
       console.log(recordMeta)
@@ -31,6 +28,7 @@ const run = async () => {
 };
 
 async function gracefullyClose() {
+  console.log('graceful shutdown')
   await producer.disconnect()
   await consumer.disconnect()
 }
