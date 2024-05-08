@@ -11,7 +11,7 @@ const run = async () => {
   console.log(readerSchema)
   fs.writeFileSync(
     path.join(__dirname, `/${Date.now()}.avsc`),
-    JSON.stringify(readerSchema, null, 2)
+    JSON.stringify(readerSchema, null, 2),
   )
 }
 

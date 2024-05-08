@@ -13,7 +13,7 @@ const run = async () => {
   await admin.connect();
 
   const topics = await admin.listTopics()
-  console.log(`Available topics`);
+  console.log('Available topics')
 
   for (const topic in topics) {
     console.log(topics[topic])

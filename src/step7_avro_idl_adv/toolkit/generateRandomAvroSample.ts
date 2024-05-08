@@ -9,6 +9,6 @@ import * as avro from 'avsc'
   // console.log(JSON.stringify(type.random(), null, 2))
   fs.writeFileSync(
     path.join(__dirname, `../../generated/random${Date.now()}.json`),
-    JSON.stringify(type.random(), null, 2)
+    JSON.stringify(type.random(), null, 2),
   )
 })()

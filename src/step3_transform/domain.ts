@@ -45,10 +45,10 @@ export function createRandomUser(): User {
     subscriptionTier: faker.helpers.arrayElement(['free', 'basic', 'business']),
     favouriteContent: faker.helpers.arrayElements([{
       title: faker.music.songName(),
-      genre: faker.music.genre()
+      genre: faker.music.genre(),
     } as Song, {
       name: faker.animal.bird(),
-      hero: faker.animal.rodent()
-    } as Movie], {min: 0, max: 2})
+      hero: faker.animal.rodent(),
+    } as Movie], {min: 0, max: 2}),
   };
 }

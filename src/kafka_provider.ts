@@ -9,8 +9,8 @@ export const kafka = new Kafka({
     sasl: {
       mechanism: 'scram-sha-256',
       username: process.env.KAFKA_USERNAME!,
-      password: process.env.KAFKA_PASSWORD!
-    }
+      password: process.env.KAFKA_PASSWORD!,
+    },
   }),
   logLevel: logLevel.ERROR,
 });

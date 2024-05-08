@@ -21,7 +21,7 @@ const run = async () => {
       const recordMeta= await producer.send({
         topic: 'transformed',
         messages: [
-          {key: '<CHANGE_ME>', value: message.value?.toString()!}
+          {key: '<CHANGE_ME>', value: message.value?.toString()!},
         ],
       });
       console.log(recordMeta)

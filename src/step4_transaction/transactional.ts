@@ -12,7 +12,7 @@ const consumer = kafka.consumer({groupId: 'my-transactional', readUncommitted: f
 const producer = kafka.producer({
   transactionalId: 'my-transactional-producer',
   maxInFlightRequests: 1,
-  idempotent: true
+  idempotent: true,
 });
 
 const run = async () => {
@@ -36,8 +36,8 @@ const run = async () => {
               partitions: [{
                 partition,
                 offset: message.offset,
-              }]
-            }]
+              }],
+            }],
           })
         await transaction.commit()
         console.log('commit')

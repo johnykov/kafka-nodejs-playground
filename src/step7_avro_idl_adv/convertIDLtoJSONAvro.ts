@@ -12,17 +12,17 @@ export async function avroSchemaFromIdl() {
 
   // re-use Text type from Choice in TextEntry
   interactionTextSchemas.fields.find(
-    (el: any) => el.name === 'keys'
+    (el: any) => el.name === 'keys',
   ).type.items = 'Text'
 
   const interactionSchemas = _.map(
     [interactionChoiceSchemas, interactionTextSchemas],
-    (it) => _.omit(it, 'namespace')
+    (it) => _.omit(it, 'namespace'),
   )
 
   // set proper interactions types
   mainAvroSchema.fields.find(
-    (el: any) => el.name === 'interactions'
+    (el: any) => el.name === 'interactions',
   ).type.items = interactionSchemas
 
   return mainAvroSchema

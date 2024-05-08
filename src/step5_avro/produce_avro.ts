@@ -14,7 +14,7 @@ const run = async () => {
 
   const {id} = await registry.register({
     type: SchemaType.AVRO,
-    schema: avroSchema
+    schema: avroSchema,
   })
 
   // Encode using the uploaded schema
