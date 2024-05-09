@@ -4,9 +4,10 @@ import { EachMessagePayload } from 'kafkajs'
 npm start src/step4_transaction/transactional.ts
 */
 
-//NOTICE
+//NOTICE, double check
+//The default value of isolation.level is read_committed. look node_modules/kafkajs/src/index.js:152
 const consumer = kafka.consumer({groupId: 'my-transactional', readUncommitted: false});
-// TODO: uzupełnij specjalne ustawienia producenta
+// TODO 1: uzupełnij specjalne ustawienia producenta
 const producer = kafka.producer({});
 
 process.on('SIGINT', gracefullyClose)
@@ -17,9 +18,9 @@ const run = async () => {
   await consumer.connect();
   await consumer.subscribe({topic, fromBeginning: true})
   await consumer.run({
-    autoCommit: true, //TODO: przestaw flagę
+    autoCommit: true, //TODO 2: przestaw flagę
     eachMessage: async ({topic, partition, message}: EachMessagePayload) => {
-    // TODO: stwórz obiekt transaction
+    // TODO 3: stwórz obiekt transaction
     },
   })
 

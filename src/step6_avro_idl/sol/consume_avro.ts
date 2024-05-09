@@ -1,18 +1,19 @@
-import { kafka } from '../kafka_provider'
+import { SchemaRegistry, SchemaType } from '@kafkajs/confluent-schema-registry'
+import { kafka, schemaRegistry } from '../../kafka_provider'
 import { EachMessagePayload } from 'kafkajs'
 /*
-npm start src/step4_transaction/sol/consumer.ts
+npm start src/step6_avro_idl/sol/consume_avro.ts
 */
-
-const consumer = kafka.consumer({groupId: 'transactional-consumer'});
+const registry = new SchemaRegistry({host: schemaRegistry})
+const consumer = kafka.consumer({groupId: 'job-avro-consumer'});
 const run = async () => {
   await consumer.connect();
-  await consumer.subscribe({ topic:'<CHANGEME>', fromBeginning: true }) //TODO:
+  await consumer.subscribe({ topic:'job-avro', fromBeginning: true })
   await consumer.run({
     eachMessage: async ({ topic, partition, message }: EachMessagePayload) => {
       console.log({
         key: message.key?.toString(),
-        value: message.value?.toString(),
+        value: JSON.parse((await registry.decode(message.value!)).toString()),
       })
     },
   })
@@ -23,4 +24,5 @@ async function gracefullyClose() {
 }
 process.on('SIGINT', gracefullyClose)
 process.on('SIGTERM', gracefullyClose)
+
 run().catch(e => console.error('[example/consumer] e.message', e));

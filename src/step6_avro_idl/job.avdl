@@ -1,0 +1,8 @@
+@namespace("pl.jan")
+protocol JobProtocol {
+	record Job {
+		int duration;
+		string jobid;
+		//date submitDate;
+	}
+}

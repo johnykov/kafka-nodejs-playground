@@ -1,20 +1,18 @@
 // https://kafkajs.github.io/confluent-schema-registry/docs/advanced-usage
 
 /*
-npx tsx --env-file=.env.local src/step5_avro/read_schema.ts
+npm start src/step5_avro/sol/read_schema.ts
 * */
 
-import { avdlToAVSCAsync, SchemaRegistry, SchemaType } from '@kafkajs/confluent-schema-registry'
-const registry = new SchemaRegistry({host: process.env.SCHEMA_REGISTRY!})
+import { SchemaRegistry } from '@kafkajs/confluent-schema-registry'
+import { schemaRegistry } from '../../kafka_provider'
+const registry = new SchemaRegistry({host: schemaRegistry})
 
 const run = async () => {
   const subject = 'examples.RandomTest'
-  // TODO:
-  // const id = await registry.getLatestSchemaId(subject)
-  // console.log(id)
-  // console.log(await registry.getSchema(id))
-
-  avdlToAVSCAsync
+  const id = await registry.getLatestSchemaId(subject)
+  console.log(id)
+  console.log(await registry.getSchema(id))
 };
 
 run().catch(e => console.error('[example/producer] e.message', e));

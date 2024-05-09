@@ -18,6 +18,7 @@
   "license": "ISC",
   "dependencies": {
     "@kafkajs/confluent-schema-registry": "3.3.0",
+    "@ovotech/avro-ts": "^6.2.0",
     "express": "4.19.2",
     "express-session": "1.18.0",
     "kafkajs": "2.2.4"
@@ -25,11 +26,11 @@
   "devDependencies": {
     "@faker-js/faker": "8.4.1",
     "@tsconfig/recommended": "1.0.5",
+    "@types/express": "4.17.21",
     "@typescript-eslint/eslint-plugin": "7.8.0",
     "@typescript-eslint/parser": "7.8.0",
     "eslint": "8.57.0",
     "eslint-plugin-node": "11.1.0",
-    "@types/express": "4.17.21",
     "tsx": "4.7.1",
     "typescript": "5.4.3"
   }

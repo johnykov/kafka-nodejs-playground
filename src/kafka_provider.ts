@@ -16,3 +16,5 @@ export const kafka = new Kafka({
 });
 
 export const topic = process.env.KAFKA_TOPIC! || 'polish_pageviews'
+
+export const schemaRegistry = process.env.SCHEMA_REGISTRY!

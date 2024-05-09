@@ -1,5 +1,5 @@
-# example
-Console producer:
+# example ONLY
+#Console producer:
 
 kafka-avro-console-producer \
   --topic orders-avro \
@@ -9,7 +9,7 @@ kafka-avro-console-producer \
   --property key.serializer=org.apache.kafka.common.serialization.StringSerializer \
   --property parse.key=true \
   --property key.separator=":"
-Console consumer:
+#Console consumer:
 
 kafka-avro-console-consumer \
   --topic orders-avro \
@@ -21,7 +21,10 @@ kafka-avro-console-consumer \
   --from-beginning
 
 # example via docker
-via docker
+1. docker exec -it schema-registry kafka-avro-console-consumer --topic random-avro --bootstrap-server broker:9092 --property schema.registry.url=http://localhost:8081
+2. npm start src/step5_avro/sol/produce_avro.ts
+
+
 docker run --rm -v ~/projects/training/:/home/appuser/ confluentinc/cp-schema-registry:7.6.1 \
 kafka-avro-console-consumer --property schema.registry.url=https://<> \
 --consumer.config ~/projects/training/config.properties \
@@ -29,11 +32,8 @@ kafka-avro-console-consumer --property schema.registry.url=https://<> \
 --topic <> \
 --from-beginning
 
-https://developer.confluent.io/tutorials/kafka-console-consumer-producer-avro/kafka.html
-# TODO: commands
- 1. docker-compose -f dccom.avro.yml up
- 2. in .env.local KAFKA_BROKERS=localhost:29092
- 3. docker exec -t broker kafka-topics --create --topic random-avro --bootstrap-server broker:9092
- 4. npx tsx --env-file=.env.local src/step5_avro/sol/produce_avro.ts
+#https://developer.confluent.io/tutorials/kafka-console-consumer-producer-avro/kafka.html
+
+ 4. npm start src/step5_avro/sol/produce_avro.ts
  5. docker exec -it schema-registry bash
- 6. kafka-avro-console-consumer   --topic random-avro   --bootstrap-server broker:9092   --property schema.registry.url=http://localhost:8081
+ 6. kafka-avro-console-consumer --topic random-avro --bootstrap-server broker:9092 --property schema.registry.url=http://localhost:8081

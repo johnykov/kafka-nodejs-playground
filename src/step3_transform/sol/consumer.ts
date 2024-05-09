@@ -7,8 +7,6 @@ npm start src/step3_transform/sol/consumer.ts
 const consumer = kafka.consumer({groupId: 'transformed-consumer'});
 const run = async () => {
   await consumer.connect();
-  process.on('SIGINT', gracefullyClose)
-  process.on('SIGTERM', gracefullyClose)
   await consumer.subscribe({ topic:'transformed', fromBeginning: true })
   await consumer.run({
     eachMessage: async ({ topic, partition, message }: EachMessagePayload) => {
@@ -24,5 +22,6 @@ const run = async () => {
 async function gracefullyClose() {
   await consumer.disconnect()
 }
-
+process.on('SIGINT', gracefullyClose)
+process.on('SIGTERM', gracefullyClose)
 run().catch(e => console.error('[example/consumer] e.message', e));

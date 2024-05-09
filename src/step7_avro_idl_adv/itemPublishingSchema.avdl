@@ -2,7 +2,6 @@
 protocol ItemPublishingProjection {
 	import idl "interaction_choice.avdl";
 	import idl "interaction_text.avdl";
-	import idl "various.avdl";
 
 	record Item {
 		string itemId;

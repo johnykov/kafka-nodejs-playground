@@ -1,6 +1,0 @@
-@namespace("com.example")
-protocol SimpleProto {
-	record Simple {
-		string foo;
-	}
-}

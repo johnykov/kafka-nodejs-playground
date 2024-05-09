@@ -1,17 +1,19 @@
 import { SchemaRegistry, SchemaType } from '@kafkajs/confluent-schema-registry'
 import * as fs from 'fs'
 import { promisify } from 'util'
-import { schemaRegistry } from '../kafka_provider'
-
+import { kafka, schemaRegistry } from '../kafka_provider'
+import { PlJan } from './generated'
+import { faker } from '@faker-js/faker/locale/pl'
 /*
-npm start src/step5_avro/produce_avro.ts
-
+npm start src/step6_avro_idl/produce_avro.ts
 */
 const registry = new SchemaRegistry({host: schemaRegistry})
+const producer = kafka.producer();
 
 const run = async () => {
   const readFileAsync = promisify(fs.readFile)
-  const avroSchema = await readFileAsync(__dirname + '/random.avsc', {encoding: 'utf-8'})
+  // or generate schema in-flight from IDL
+  const avroSchema = await readFileAsync(__dirname+'/../job-schema.avsc', {encoding: 'utf-8'})
 
   const {id} = await registry.register({
     type: SchemaType.AVRO,
@@ -19,14 +21,11 @@ const run = async () => {
   })
 
   // Encode using the uploaded schema
-  const payload = {fullName: 'John Doe'}
+  const payload: PlJan.Job = {duration: 123, jobid: faker.string.nanoid()}
   const encodedPayload = await registry.encode(id, payload)
-  // TODO: fetch length of encoded msg
-
-  // Decode the payload
-  const decodedPayload = await registry.decode(encodedPayload)
-  // TODO: fetch length of encoded msg
-
+  //TODO:
+  console.log('Message sent successfully', payload);
+  await producer.disconnect();
 };
 
 run().catch(e => console.error('[example/producer] e.message', e));

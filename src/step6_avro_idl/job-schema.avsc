@@ -1,0 +1,15 @@
+{
+  "namespace": "pl.jan",
+  "type": "record",
+  "name": "Job",
+  "fields": [
+    {
+      "type": "int",
+      "name": "duration"
+    },
+    {
+      "type": "string",
+      "name": "jobid"
+    }
+  ]
+}
