@@ -13,7 +13,6 @@ const run = async () => {
     JSON.stringify(readerSchema, null, 2),
   )
   const ts = toTypeScript(readerSchema)
-
   fs.writeFileSync(path.join(__dirname, '/generated.d.ts'), ts)
 }
 

@@ -1,62 +1,27 @@
-# agenda warsztatu
-
-
-### unit 1
-- NodeJS KafkaJS [Producer](./src/step1_produce_create_topic/step1_instruction.md) or [Producer PL](./src/step1_produce_create_topic/step1_instruction_pl.md) 
-- NodeJS KafkaJS [Consumer](./src/step2_consume/step2_instruction.md)
-- NodeJS KafkaJS Transformer
-
-### unit 2
-- wstęp do schema registry
-- kafka-avro-console-consumer
-- java <-> nodejs avro
-
-### unit 3
-- Zaawansowane typy: AVRO IDL i schema registry
-
-### ZALETY KAFKA 
+## Zalety Apache Kafka
 Jest to lepsze podejście w porównaniu do wysyłania zdarzeń przez HTTP, ponieważ:
 
-- Umożliwia oddzielenie nadawcy i odbiorcy zdarzenia. Ponieważ nie oczekujesz (ani nie potrzebujesz) natychmiastowej odpowiedzi, żądanie HTTP nie pomaga
-- Jest trwały. Ponieważ zdarzenia Kafki nie są usuwane po użyciu, możesz odtworzyć te zdarzenia, jeśli usługa wysyłania powiadomień nagle ulegnie awarii
-- Jest skalowalny. Możesz korzystać ze zdarzeń Kafki w wielu miejscach, nawet w różnych usługach lub interfejsach API
+- Umożliwia oddzielenie nadawcy i odbiorcy poprzez eventy (loose coupling). Ponieważ nie oczekujesz (ani nie potrzebujesz) natychmiastowej odpowiedzi = asychroniczna komunikacja.
+- Jest trwały. Ponieważ eventy (wiadomości) Kafki nie są usuwane po użyciu, możesz odtworzyć te eventy, jeśli usługa wysyłania powiadomień nagle ulegnie awarii.
+- Jest skalowalny. Możesz korzystać z eventów Kafki w wielu miejscach, nawet w różnych usługach lub interfejsach API
 
-# local kafka
+# agenda
+1. W każdym katalogu `step[number]` jest podkatalog `sol` który zawiera rozwiązania.
+2. Niektóre zadania wymagają implementacji serwera Expressjs.
 
-## docker-compose
-Docker-compose cloned from [cp-all-in-one](https://github.com/confluentinc/cp-all-in-one/tree/7.5.0-post/cp-all-in-one-kraft)
+### day 1
+- NodeJS KafkaJS list topic, create topic, producer. [step1](./src/step1_produce_create_topic/step1_instruction_pl.md)
+- NodeJS KafkaJS [step2](./src/step2_consume/step2_instruction_pl.md)
+- NodeJS KafkaJS Transformer [step3](./src/step3_transform/step3_instruction_pl.md)
 
-run 
-```shell
-docker-compose up broker 
-# with zsh docker-compose plugin
-dcup broker schema-registry
-```
-will download 3GB.
+### day 2
+- NodeJS KafkaJS Transactions [step4](./src/step4_transaction/step4_instruction_pl.md)
+- Avro + schema registry [step5](./src/step5_avro/step5_instruction_pl.md)
+- kafka-avro-console-consumer example usage
 
-### error
-INVALID_REPLICATION_FACTOR
-> org.apache.kafka.common.errors.InvalidReplicationFactorException: Unable to replicate the partition 3 time(s): The target replication factor of 3 cannot be reached because only 1 broker(s) are registered.
- 
-### FIX modify broker ENVs
-
-confluentinc/cp-kafka:7.6.1
-https://docs.confluent.io/platform/current/release-notes/index.html#release-notes-for-cp-version
-
-### Test local setup
-```sh
-kafka-topics --list --bootstrap-server localhost:9092
-```
-output
-```sh
-__consumer_offsets
-_confluent-command
-_confluent-link-metadata
-_confluent-metrics
-_confluent-telemetry-metrics
-_confluent_balancer_api_state
-_schemas
-```
+### day 3
+- NodeJS KafkaJS Avro IDL [step6](./src/step6_avro_idl/step6_instruction_pl.md)
+- Zaawansowane typy: AVRO IDL [step7](./src/step7_avro_idl_adv/step7_instruction_pl.md)
 
 
 # KATA

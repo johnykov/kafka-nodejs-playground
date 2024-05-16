@@ -8,5 +8,5 @@ https://avro.apache.org/docs/1.11.1/idl-language/
    ```
 1. skonwertuj AVDL do AVSC
 2. uruchom producera i konsumera korzystających ze schemy
-3. dodaj nowe pole w respekcie do https://github.com/mtth/avsc/wiki/Advanced-usage#schema-evolution
+3. przećwicz avro schema evolution, dodaj nowe pole `date submitDate` w respekcie do https://docs.confluent.io/platform/current/schema-registry/fundamentals/schema-evolution.html BACKWARD /FORWARD
 2. union, include https://kafkajs.github.io/confluent-schema-registry/docs/schemas

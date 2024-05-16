@@ -3,6 +3,7 @@ import * as fs from 'fs'
 import { promisify } from 'util'
 import avro from 'avsc'
 import { kafka, schemaRegistry } from '../../kafka_provider'
+import { faker } from '@faker-js/faker/locale/pl'
 /*
 npm start src/step5_avro/sol/produce_avro.ts
 */
@@ -19,7 +20,7 @@ const run = async () => {
   })
 
   // Encode using the uploaded schema
-  const payload = {fullName: `John Doe ${Date.now()}`}
+  const payload = {id: faker.string.nanoid(), fullName: `John Doe ${Date.now()}`}
   const encodedPayload = await registry.encode(id, payload)
   console.log('encodedPayload:', encodedPayload, encodedPayload.length)
 

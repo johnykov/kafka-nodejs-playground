@@ -2,6 +2,7 @@ import { SchemaRegistry, SchemaType } from '@kafkajs/confluent-schema-registry'
 import * as fs from 'fs'
 import { promisify } from 'util'
 import { schemaRegistry } from '../kafka_provider'
+import { faker } from '@faker-js/faker/locale/pl'
 
 /*
 npm start src/step5_avro/produce_avro.ts
@@ -19,7 +20,7 @@ const run = async () => {
   })
 
   // Encode using the uploaded schema
-  const payload = {fullName: 'John Doe'}
+  const payload = {id: faker.string.nanoid(), fullName: 'John Doe'}
   const encodedPayload = await registry.encode(id, payload)
   // TODO: fetch length of encoded msg
 

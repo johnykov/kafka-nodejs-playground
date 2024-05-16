@@ -14,6 +14,6 @@ https://github.com/mtth/avsc
 4. napisz producer avro message to topic, https://developer.confluent.io/tutorials/kafka-console-consumer-producer-avro/kafka.html
 5. odczytaj CLI kafka-avro-console-consumer
 5. napisz avro message consumer, zobacz nieodkodowaną wiadomość
-6. przećwicz avro schema evolution 
+6. przećwicz dodanie nowej lekkiej schemy z tylko ID 
    - https://github.com/mtth/avsc/wiki/Advanced-usage#schema-evolution createResolver, heavyType/ lightType 
-   - https://docs.confluent.io/platform/current/schema-registry/fundamentals/schema-evolution.html BACKWARD /FORWARD 
+
