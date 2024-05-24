@@ -1,7 +1,9 @@
-import { kafka, topic } from '../kafka_provider'
+import { kafka } from '../kafka_provider'
 /*
 npm start src/step1_produce_create_topic/producer.ts
 */
+
+const topic = 'polish.hellos'
 
 const producer = kafka.producer();
 const run = async () => {
@@ -19,4 +21,4 @@ const run = async () => {
   await producer.disconnect();
 };
 
-run().catch(e => console.error('[example/producer] e.message', e));
+run().catch(e => console.error('[step1/producer] e.message', e));

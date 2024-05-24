@@ -12,7 +12,7 @@ export const kafka = new Kafka({
       password: process.env.KAFKA_PASSWORD!,
     },
   }),
-  logLevel: logLevel.ERROR,
+  logLevel: process.env.LOG_LEVEL ? logLevel.DEBUG : logLevel.ERROR,
 });
 
 export const topic = process.env.KAFKA_TOPIC! || 'polish_pageviews'
