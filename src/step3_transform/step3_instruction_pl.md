@@ -3,7 +3,7 @@
 2. napisz i uruchom `transform.ts`, który będzie ustawiał klucz wiadomości wartością z pola subscriptionTier i wysyłał na inny nowy topic
    możesz potrzebować nowy topic:
     ```shell
-    kafka-topics --create --bootstrap-server localhost:29092 \
+    kafka-topics --create --bootstrap-server localhost:9092 \
     --partitions 3 --replication-factor 1 \
     --topic transformed
     ```

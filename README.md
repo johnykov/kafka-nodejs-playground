@@ -8,17 +8,26 @@ Jest to lepsze podejście w porównaniu do wysyłania zdarzeń przez HTTP, ponie
 - Jest skalowalny. Możesz korzystać z eventów Kafki w wielu miejscach, nawet w różnych usługach lub interfejsach API
 
 # warunek wstępny
-Lokalna maszyna z zainstalowaną wersją
-- nodejs min 20
+Lokalna maszyna z zainstalowanym oprogramowaniem:
+- NodeJS minimum wersja >= 20
+- docker 
 - docker-compose
+- ulubione IDE
 
-# agenda
+Przed szkoleniem proszę uruchomić:
+- docker pull apache/kafka:3.7.0
+- docker pull ghcr.io/aiven-open/karapace:3.13.0
+po uruchomieniu sprawdzić czy w/w obrazy dockerowe zostały poprawnie ściągniete poleceniem `docker images`
+
+## uwagi i rozwiązania
 1. W każdym katalogu `step[number]` jest podkatalog `sol` który zawiera rozwiązania.
 2. Niektóre zadania wykorzystują bibliotekę ExpressJS.
 
+# agenda
 ### day 1
+- [CLI 1. Kafka Console Producer + Kafka Console Consumer](https://rustic-candytuft-314.notion.site/Publish-Subscribe-b17cfbb86a2d46f887db1b54d887afa2)
 - NodeJS KafkaJS list topic, create topic, producer. [step1](./src/step1_produce_create_topic/step1_instruction_pl.md)
-- NodeJS KafkaJS [step2](./src/step2_consume/step2_instruction_pl.md)
+- NodeJS KafkaJS consume [step2](./src/step2_consume/step2_instruction_pl.md)
 - NodeJS KafkaJS Transformer [step3](./src/step3_transform/step3_instruction_pl.md)
 
 ### day 2
@@ -29,6 +38,8 @@ Lokalna maszyna z zainstalowaną wersją
 ### day 3
 - NodeJS KafkaJS Avro IDL [step6](./src/step6_avro_idl/step6_instruction_pl.md)
 - Zaawansowane typy: AVRO IDL [step7](./src/step7_avro_idl_adv/step7_instruction_pl.md)
+- Kafka + express [step8]
+- Zbyt wolny konsumer, który nie komituje offseta [step9]
 
 
 # KATA

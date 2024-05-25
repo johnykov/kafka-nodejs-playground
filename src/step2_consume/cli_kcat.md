@@ -1,5 +1,5 @@
 # local
-- zainstaluj kcat
+- zainstaluj `kcat`
 1. wyświet topiki i partycje
   ```sh
   kcat -b localhost:29092 -L

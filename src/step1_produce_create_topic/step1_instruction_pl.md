@@ -5,11 +5,11 @@
    ```
 2. Otwórz IDE, zaimportuj projekt
 3. Przejrzyj w IDE plik `.env.local`, zweryfikuj czy porty brokera i schema-registry są takie jak w pliku docker-compose.
-4. W osobnym terminalu, uruchom kafkę poprzed docker-compose.
+4. W osobnym terminalu, uruchom kafkę poprzed docker-compose. [Dlaczego taki setup?](../../docs/local.md)
    ```sh
    docker-compose -f dc.apache.yml up
    ```
-   za pierwszym razem, proces potrwa chwile (ok 10min) dłużej gdyż tyle zajmie ściąganie obrazów dockerowych.
+   za pierwszym razem, proces może trwać dłużej niż zwykle gdyż w zależności od prędkości połączenia internetowego będą ściągane obrazy docker.
 5. Otwórz terminal kafka w docker desktop
    
        docker desktop > open dashboard > containers > [kafka-nodejs-playground] > [broker] > Exec (*tab)

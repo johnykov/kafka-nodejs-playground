@@ -1,8 +1,10 @@
-import { kafka, topic } from '../kafka_provider'
+import { kafka } from '../kafka_provider'
 import { EachMessagePayload } from 'kafkajs'
 /*
 npm start src/step2_consume/consumer.ts
 */
+
+const topic = 'polish.hellos'
 
 const consumer = kafka.consumer({groupId: 'my-test-consumer'});
 const run = async () => {
@@ -15,7 +17,7 @@ const run = async () => {
       })
     },
   })
-  // TODO: figure out what's wrong, why quit so early
+  // TODO: block for await
   await consumer.disconnect();
 };
 

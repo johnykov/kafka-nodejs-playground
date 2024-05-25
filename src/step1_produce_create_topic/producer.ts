@@ -13,7 +13,7 @@ const run = async () => {
   await producer.send({
     topic: topic,
     messages: [
-      {value: 'Hello Kafka!'},
+      {value: `Hello Kafka! ${Date.now()}`},
     ],
   });
 

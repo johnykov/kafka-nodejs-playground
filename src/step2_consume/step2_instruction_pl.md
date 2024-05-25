@@ -1,22 +1,61 @@
 # 2 consume
-1. uruchom `consumer.ts`
-2. napraw błąd wczesnego kończenia skryptu
-3. zasyskrubj się na event HEARTBEAT, znajdź interwał w jakim broker pinguje konsumenta
-4. uruchom `consumer.ts` jeszcze raz, zaobserwuj procesowanie
-5. uruchom producer ze step1 `npm start src/step1_produce_create_topic/producer.ts` jeśli chcesz zobaczyć ruch
-6. wylistuj grupy konsumentów
+**DOBRA PRAKTYKA**: consumer.connect wywołane raz na początku procesu
+
+1. W pliku `consumer.ts` ustaw nazwę topica na 'polish.hellos' 
+2. Uruchom `consumer.ts`
+3. Zaobserwuj brak komunikatu i zakończenie wykonywania skryptu bez zwrotu komunikatu.
+4. Dodaj kolejna wiadomość via 
+   ```shell
+   npm start src/step1_produce_create_topic/producer.ts
    ```
-   kafka-consumer-groups --bootstrap-server localhost:29092 --list
+5. wybierz rozwiązanie:
+  - blokowanie na sygnał z konsoli, wklej poniższy kod przed ostatnią linią
+    ```typescript
+     async function gracefullyClose() {
+     await consumer.disconnect()
+     }
+     process.on('SIGINT', gracefullyClose)
+     process.on('SIGTERM', gracefullyClose)
+     ```
+  - LUB serwer express, wklej poniższy kod na końcu pliku
+    ```typescript
+     const app = express()
+     app.use(express.json());
+     app.use(express.urlencoded({
+     extended: false,
+     }));
+     
+     const server = app.listen(9123, () => {
+     console.log(`Server is listening on ${9123}`);
+     });
+     
+     ```
+    QUIZ: Czy wywołanie `consumer.disconnect` jest konieczne na koniec przetwarzania? Co się zadzieje implicite? 
+6. Zasyskrubj się na event HEARTBEAT, znajdź  interwał w jakim broker pinguje konsumenta. Wklej poniższy kod
+   ```typescript
+   consumer.on('consumer.heartbeat', (ev)=> console.log(new Date(), ev))
    ```
-7. sprawdź LAG konsumenta dla wybranego topicu
+7. uruchom `consumer.ts` jeszcze raz, zaobserwuj procesowanie
+8. uruchom producer ze step1 `npm start src/step1_produce_create_topic/producer.ts` jeśli chcesz zobaczyć kolejne wiadomości
+9. wylistuj grupy konsumentów
    ```sh
-   kafka-consumer-groups --bootstrap-server localhost:29092 --group my-test-consumer --describe
+   kafka-consumer-groups --bootstrap-server localhost:9092 --list
    ```
-8. zresetuj TESTOWO offset (UWAGA operaja wrażliwa lepiej świadomie nie uruchamiać na PRODUKCJI )
+10. sprawdź LAG konsumenta dla wybranego topika
    ```sh
-   kafka-consumer-groups --bootstrap-server localhost:29092 \
-   --topic polish_pageviews --group my-test-consumer \
+   kafka-consumer-groups --bootstrap-server localhost:9092 --group my-test-consumer --describe
+   ```
+11. zresetuj TESTOWO offset (UWAGA operaja wrażliwa lepiej świadomie nie uruchamiać na PRODUKCJI )
+   ```sh
+   kafka-consumer-groups --bootstrap-server localhost:9092 \
+   --topic polish.hellos --group my-test-consumer \
    --reset-offsets --to-earliest --execute
    ```
    sprawdź CURRENT-OFFSET oraz LAG ponownie
-9. zapoznaj się z definicją ustawienia 'from-beggining' https://kafka.js.org/docs/consuming#a-name-from-beginning-a-frombeginning
+12. zapoznaj się z definicją ustawienia 'from-beggining' https://kafka.js.org/docs/consuming#a-name-from-beginning-a-frombeginning
+
+
+PODSUMOWANIE:
+- ile razy wołać consumer.connect?
+- co to jest LAG?
+- co ile sekund generowany jest heartbeat?
