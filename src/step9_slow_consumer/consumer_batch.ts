@@ -1,6 +1,6 @@
 import { kafka } from '../kafka_provider'
 /*
-npm start src/step2_consume/sol/consumer_batch.ts
+npm start src/step9_slow_consumer/consumer_batch.ts
 */
 
 const topic = 'polish.hellos'

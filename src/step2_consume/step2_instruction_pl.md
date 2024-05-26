@@ -1,13 +1,13 @@
 # 2 consume
 **DOBRA PRAKTYKA**: consumer.connect wywołane raz na początku procesu
 
-1. W pliku `consumer.ts` ustaw nazwę topica na 'polish.hellos' 
-2. Uruchom `consumer.ts`
-3. Zaobserwuj brak komunikatu i zakończenie wykonywania skryptu bez zwrotu komunikatu.
-4. Dodaj kolejna wiadomość via 
+1. Jeśli podczas nauki odczytasz wszystkie wiadomości w topika i tym "przesuniesz offset" to po prostu dodaj kolejna testową wiadomość via
    ```shell
    npm start src/step1_produce_create_topic/producer.ts
    ```
+2. W pliku `consumer.ts` ustaw nazwę topica na 'polish.hellos' 
+3. Uruchom `consumer.ts`
+4. Zaobserwuj brak komunikatu i zakończenie wykonywania skryptu bez zwrotu komunikatu.
 5. wybierz rozwiązanie:
   - blokowanie na sygnał z konsoli, wklej poniższy kod przed ostatnią linią
     ```typescript
@@ -53,7 +53,7 @@
    ```
    sprawdź CURRENT-OFFSET oraz LAG ponownie
 12. zapoznaj się z definicją ustawienia 'from-beggining' https://kafka.js.org/docs/consuming#a-name-from-beginning-a-frombeginning
-
+13. BONUS narzędzie [kcat](./cli_kcat.md)
 
 PODSUMOWANIE:
 - ile razy wołać consumer.connect?

@@ -1,0 +1,166 @@
+{
+  "namespace": "com.example",
+  "type": "record",
+  "name": "Item",
+  "fields": [
+    {
+      "type": "string",
+      "name": "itemId"
+    },
+    {
+      "type": "string",
+      "name": "itemName"
+    },
+    {
+      "type": [
+        "null",
+        "int"
+      ],
+      "name": "maxScore",
+      "default": null
+    },
+    {
+      "type": "string",
+      "name": "updatedAt"
+    },
+    {
+      "type": [
+        "null",
+        "string"
+      ],
+      "name": "data",
+      "default": null
+    },
+    {
+      "type": {
+        "type": "array",
+        "items": [
+          {
+            "type": "record",
+            "name": "ChoiceInteraction",
+            "fields": [
+              {
+                "type": "string",
+                "name": "id"
+              },
+              {
+                "type": [
+                  "null",
+                  "int"
+                ],
+                "name": "maxScore",
+                "default": null
+              },
+              {
+                "type": [
+                  {
+                    "type": "record",
+                    "name": "Text",
+                    "fields": [
+                      {
+                        "type": "string",
+                        "name": "id"
+                      },
+                      {
+                        "type": "string",
+                        "name": "text"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "record",
+                    "name": "Image",
+                    "fields": [
+                      {
+                        "type": "string",
+                        "name": "id"
+                      },
+                      {
+                        "type": "string",
+                        "name": "url"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "record",
+                    "name": "Audio",
+                    "fields": [
+                      {
+                        "type": "string",
+                        "name": "id"
+                      },
+                      {
+                        "type": "string",
+                        "name": "url"
+                      },
+                      {
+                        "type": "string",
+                        "name": "transcript"
+                      }
+                    ]
+                  }
+                ],
+                "name": "key"
+              },
+              {
+                "type": {
+                  "type": "array",
+                  "items": [
+                    "Text",
+                    "Image",
+                    "Audio"
+                  ]
+                },
+                "name": "distractors",
+                "default": []
+              }
+            ]
+          },
+          {
+            "type": "record",
+            "name": "TextEntryInteraction",
+            "fields": [
+              {
+                "type": "string",
+                "name": "id"
+              },
+              {
+                "type": [
+                  "null",
+                  "int"
+                ],
+                "name": "maxScore",
+                "default": null
+              },
+              {
+                "type": {
+                  "type": "array",
+                  "items": "Text"
+                },
+                "name": "keys",
+                "default": []
+              }
+            ]
+          }
+        ]
+      },
+      "name": "interactions",
+      "default": []
+    },
+    {
+      "type": "string",
+      "name": "change_id"
+    },
+    {
+      "type": "string",
+      "name": "change_name"
+    },
+    {
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      },
+      "name": "timestamp"
+    }
+  ]
+}

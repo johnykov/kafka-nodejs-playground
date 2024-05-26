@@ -10,9 +10,9 @@ import { toTypeScript } from '@ovotech/avro-ts'
   const ts = toTypeScript(avroSchema)
 
   fs.writeFileSync(
-    path.join(__dirname, '../../generated/processedItemAVRO.json'),
+    path.join(__dirname, '../generated/processedItemAVRO.json'),
     JSON.stringify(avroSchema, null, 2),
   )
 
-  fs.writeFileSync(path.join(__dirname, '../../generated/processedItemTypes.d.ts'), ts)
+  fs.writeFileSync(path.join(__dirname, '../generated/processedItemTypes.d.ts'), ts)
 })()

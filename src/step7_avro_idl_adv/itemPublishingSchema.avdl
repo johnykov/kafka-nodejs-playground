@@ -6,12 +6,10 @@ protocol ItemPublishingProjection {
 	record Item {
 		string itemId;
 		string itemName;
-		Stimulus stimulus;
 		union{null, int} maxScore = null;
 		string updatedAt;
 		union{null, string} data = null;
 		array<union{ChoiceInteraction, TextEntryInteraction}> interactions = [];
-		union{null, DecorativeImage} decorativeImage = null;
 		string change_id;
 		string change_name;
 		timestamp_ms timestamp;

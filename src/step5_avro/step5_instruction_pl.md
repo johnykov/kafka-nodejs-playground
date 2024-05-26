@@ -1,10 +1,11 @@
-https://kafkajs.github.io/confluent-schema-registry/
-https://github.com/mtth/avsc
+Link do biblioteki klienta schema registry: https://kafkajs.github.io/confluent-schema-registry/
+Link do biblioteki do enkodowania AVRO:  https://github.com/mtth/avsc
 
-1. ```shell
-      kafka-topics --create --bootstrap-server localhost:29092 \
-      --partitions 1 --replication-factor 1 \
-      --topic random-avro
+1. Stwórz topic
+   ```shell
+   kafka-topics --create --bootstrap-server localhost:29092 \
+   --partitions 1 --replication-factor 1 \
+   --topic random-avro
    ```
 1. uruchom `produce_avro` i porównaj wielkości JSON to avro message
 2. pobierz schema from registry `read_schema`

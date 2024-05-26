@@ -25,7 +25,6 @@ po uruchomieniu sprawdzić czy w/w obrazy dockerowe zostały poprawnie ściągni
 
 # agenda
 ### day 1
-- [CLI 1. Kafka Console Producer + Kafka Console Consumer](https://rustic-candytuft-314.notion.site/Publish-Subscribe-b17cfbb86a2d46f887db1b54d887afa2)
 - NodeJS KafkaJS list topic, create topic, producer. [step1](./src/step1_produce_create_topic/step1_instruction_pl.md)
 - NodeJS KafkaJS consume [step2](./src/step2_consume/step2_instruction_pl.md)
 - NodeJS KafkaJS Transformer [step3](./src/step3_transform/step3_instruction_pl.md)

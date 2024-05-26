@@ -24,22 +24,23 @@
    ```sh
    #local: 
       kafka-topics --list --bootstrap-server localhost:9092
-   #via docker: 
+   #via docker exec tab: 
       ./kafka-topics.sh --list --bootstrap-server localhost:9092
    ```
 7. Stwórz topic
    ```sh
    kafka-topics --create --bootstrap-server localhost:9092 \
     --partitions 1 --replication-factor 1 \
-    --topic step1.test
+    --topic step1.first.topic
    #delete topic
-   kafka-topics --delete --topic step1_test --bootstrap-server localhost:9092
+   kafka-topics --delete --topic step1.first.topic --bootstrap-server localhost:9092
    ```
-8. Stwórz topic via skrypt `adm_create_topic.ts` wklej poniższy kod w odpowiednie miejsce
+   - [CLI 1. Kafka Console Producer + Kafka Console Consumer](https://rustic-candytuft-314.notion.site/Publish-Subscribe-b17cfbb86a2d46f887db1b54d887afa2)
+8. Stwórz topic via skrypt `adm_create_topic.ts` wklej poniższy kod w odpowiednie miejsce `//FIXME`
    ```typescript
    const topics = await admin.createTopics({topics: [{topic: 'step1.from.script'}]})
    ```
-9. uruchom producer.ts
+9. uruchom `producer.ts`
     ```sh
    npm start src/step1/producer.ts
    ```
@@ -52,10 +53,11 @@
    - automatycznie, ustawiając w producerze `auto.create.topics` na true  
    - manualnie skryptem `adm_create_topic`  
    - manualnie via CLI
-8. powtórz producer
-9. Uruchom polecenie `describe topic` aby zaobserwować metadane dot. topic
+8. powtórz uruchomieine `producer.ts`
+9. Uruchom polecenie `describe topic` aby odczytać metadane dot. topic
    ```shell
    kafka-topics --bootstrap-server localhost:9092 --describe --topic polish.hellos
    ```
   - ile partycji, replic, ISR (in-sync-replicas)
+10. Stwórz topic z 3 partycjami i replication-factor = 1.
 

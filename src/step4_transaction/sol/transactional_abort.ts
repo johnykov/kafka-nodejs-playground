@@ -1,7 +1,6 @@
 import { kafka, topic } from '../../kafka_provider'
 import { EachMessagePayload } from 'kafkajs'
 import { topicName } from '../topic'
-import AsyncLock from 'async-lock'
 /*
 npm start src/step4_transaction/sol/transactional_abort.ts
 */
@@ -23,7 +22,6 @@ const run = async () => {
   await consumer.run({
     autoCommit: false,
     eachMessage: async ({topic, partition, message}: EachMessagePayload) => {
-      const lock = new AsyncLock();
       const transaction = await producer.transaction()
       try {
         console.log(`tx processing offset:${message.offset} partition: ${partition}`);
