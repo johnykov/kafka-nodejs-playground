@@ -1,16 +1,20 @@
 # step8
-- component driven architecture
+- przykład "component driven architecture"
+  - plik app.ts, katalog components
 - uruchom
     ```shell
     npx tsx --watch src/step8_kafka_express/app.ts
     ```
+### przykład nestjs + [kafka](https://docs.nestjs.com/microservices/kafka)
+- katalog "trip_reserve"
+- cd trip_reserve
+- npm i
+- npm run start:dev
 
-https://docs.nestjs.com/microservices/kafka
 
 ## Outbox pattern
 ### Problem
 Jak atomowo zaktualizować bazę danych i wysłać wiadomości do brokera wiadomości?
-
 
 ### Opis
 gdy usługa obsługuje polecenie i musi zmienić stan w bazie danych i opublikować wiadomość/zdarzenie w Kafce, należy wykonać jedno lub drugie. Tj. jeśli transakcja w bazie danych nie powiedzie się, wiadomość do Kafki nie może zostać opublikowana. Aby rozwiązać ten problem, komunikat(y), które mają zostać opublikowane w Kafce, są przechowywane w bazie danych w tej samej transakcji i ostatecznie publikowane w Kafce (po pomyślnym zatwierdzeniu transakcji)

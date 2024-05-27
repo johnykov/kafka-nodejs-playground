@@ -14,10 +14,23 @@ Example in docker-compose.classic.yml file in root dir.
 2. [Karapace](https://github.com/Aiven-Open/karapace/blob/main/container/compose.yml)
 https://github.com/aiven-open/karapace/pkgs/container/karapace
 
+### Multi-node setup
+Aby możliwe było zwiększenie `--replication-factor 3`
+- https://docs.confluent.io/platform/current/kafka/multi-node.html
+- https://github.com/confluentinc/kafka/blob/b563b6900a480b70675a24001f639d84b3167989/docker/examples/README.md
 
+```shell
+kafka-topics --list --bootstrap-server localhost:29092
+
+kafka-topics --create --bootstrap-server localhost:29092 \
+--partitions 3 --replication-factor 3 \
+--topic polish_pageviews
+
+kafka-topics --bootstrap-server localhost:29092 --describe --topic polish_pageviews
+```
 ### Test local setup when using Confluent stack
 ```sh
-kafka-topics --list --bootstrap-server localhost:29092
+kafka-topics --list --bootstrap-server localhost:9092
 ```
 output
 ```sh

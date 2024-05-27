@@ -25,20 +25,24 @@ po uruchomieniu sprawdzić czy w/w obrazy dockerowe zostały poprawnie ściągni
 
 # agenda
 ### day 1
+- czym jest KATA? Definicja poniżej
+- historia klienta JS
 - NodeJS KafkaJS list topic, create topic, producer. [step1](./src/step1_produce_create_topic/step1_instruction_pl.md)
 - NodeJS KafkaJS consume [step2](./src/step2_consume/step2_instruction_pl.md)
 - NodeJS KafkaJS Transformer [step3](./src/step3_transform/step3_instruction_pl.md)
 
 ### day 2
 - NodeJS KafkaJS Transactions [step4](./src/step4_transaction/step4_instruction_pl.md)
+- wstęp do Avro keynote
 - Avro + schema registry [step5](./src/step5_avro/step5_instruction_pl.md)
 - kafka-avro-console-consumer example usage
 
 ### day 3
 - NodeJS KafkaJS Avro IDL [step6](./src/step6_avro_idl/step6_instruction_pl.md)
 - Zaawansowane typy: AVRO IDL [step7](./src/step7_avro_idl_adv/step7_instruction_pl.md)
-- Kafka + express [step8]
+- Kafka, express, Outbox pattern [step8]
 - Zbyt wolny konsumer, który nie komituje offseta [step9]
+- remote kafka cluster: upstash, confluent cloud
 
 
 # KATA
@@ -48,7 +52,6 @@ Co sprawia, że sesja treningowa jest dobra? Potrzebujesz czasu bez przerw i pro
 Code Kata jest próbą przeniesienia tego elementu praktyki do tworzenia oprogramowania. Kata to ćwiczenie w karate, w którym powtarzasz jakąś formę wiele, wiele razy, wprowadzając niewielkie ulepszenia w każdym z nich. Intencja kodu kata jest podobna. Każde z nich jest krótkim ćwiczeniem (około 30 minut do godziny). Niektóre wymagają programowania i można je kodować na wiele różnych sposobów. Niektóre mają charakter otwarty i wymagają przemyślenia zagadnień stojących za programowaniem. Jest mało prawdopodobne, aby istniała jedna poprawna odpowiedź. Mniej więcej co tydzień dodaję nowe kata. Zainwestuj trochę czasu w swoje rzemiosło i wypróbuj je.
 
 Pamiętaj, że celem kata nie jest uzyskanie poprawnej odpowiedzi. Chodzi o to, czego się uczysz po drodze. Celem jest praktyka, a nie rozwiązanie.
-
 
 ### Historia klientów w JS, KafkaJS freeze
 Trendy https://npmtrends.com/kafka-node-vs-kafkajs-vs-node-rdkafka
