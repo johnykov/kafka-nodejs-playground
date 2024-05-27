@@ -1,6 +1,6 @@
 # 2 consume
 **DOBRA PRAKTYKA**: consumer.connect wywołane raz na początku procesu
-
+![hero](../../docs/pics/kafka_step1_publish.png)
 1. Jeśli podczas nauki odczytasz wszystkie wiadomości w topika i tym "przesuniesz offset" to po prostu dodaj kolejna testową wiadomość via
    ```shell
    npm start src/step1_produce_create_topic/producer.ts

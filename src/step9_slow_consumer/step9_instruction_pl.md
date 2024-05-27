@@ -23,3 +23,4 @@ Rozwiązanie:
 2. Zastosuj pause/resume https://kafka.js.org/docs/consuming#a-name-pause-resume-a-pause-resume
    3. Przykład: sytuacja, w której może to być przydatne, ma miejsce, gdy zależność zewnętrzna używana przez konsumenta jest pod zbyt dużym obciążeniem
    4. Rozwiązanie adaptacyjne jednak zwiększa complexity
+5. use eachMessage

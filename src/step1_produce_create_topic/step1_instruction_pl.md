@@ -1,4 +1,5 @@
 ## setup + ćwiczenie 1 produce
+![hero](../../docs/pics/0_ixosAmhBDsyBBhoS.webp)
 1. Po sklonowaniu repozytorium, przejdź do terminala, zainstaluj zależności
    ```sh
    npm i
