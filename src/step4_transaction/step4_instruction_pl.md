@@ -21,3 +21,4 @@
    ```sh
    kafka-consumer-groups --bootstrap-server localhost:29092 --group my-transactional-abort --describe
    ```
+8. zapoznaj się [outbox pattern](./outbox.md)

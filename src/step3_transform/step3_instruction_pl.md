@@ -15,7 +15,7 @@
     ```
 3. napisz i uruchom `consumer.ts`, który będzie wyświetlał klucze oraz body wiadomości
 4. (opcjonalnie) warto się zastanowić czy eventy nie powinny na tym etapie być zgodne ze specyfikacją https://cloudevents.io/
-5. przypomnij sobie za co był odpowiedzialny klucz, jaką gwarancje daje kafka gdy ustawiamy ten sam klucz dla wiadomości?
+5. QUIZ: przypomnij sobie za co był odpowiedzialny klucz, jaką gwarancje daje kafka gdy ustawiamy ten sam klucz dla wiadomości?
 6. w 3 osobnych oknach terminala powinny działać 3 procesy
    7. continuous_producer
    8. transform

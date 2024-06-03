@@ -21,9 +21,12 @@ services:
       KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
       KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
       KAFKA_LOG_DIRS: '/tmp/kraft-combined-logs'
-
   karapace-registry:
     image: ghcr.io/aiven-open/karapace:3.13.0
+    entrypoint:
+      - /bin/bash
+      - /opt/karapace/start.sh
+      - registry
     depends_on:
       - broker
     ports:
