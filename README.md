@@ -54,7 +54,7 @@ Code Kata jest próbą przeniesienia tego elementu praktyki do tworzenia oprogra
 Pamiętaj, że celem kata nie jest uzyskanie poprawnej odpowiedzi. Chodzi o to, czego się uczysz po drodze. Celem jest praktyka, a nie rozwiązanie.
 
 ### Historia klientów w JS, KafkaJS freeze
-Trendy https://npmtrends.com/kafka-node-vs-kafkajs-vs-node-rdkafka
+Trendy https://npmtrends.com/@confluentinc/kafka-javascript-vs-kafka-node-vs-kafkajs-vs-node-rdkafka
 
 Według [Looking for maintainers](https://github.com/tulios/kafkajs/issues/1603) KafkaJS jest chwilowo zamrożonym projektem. Z moich doświadczeń dotychczas ten klient był bardziej niezawodny niż [node-rdkafka](https://github.com/Blizzard/node-rdkafka). Ten ostatni działa tylko z określonymi, niewspieranym wersjami nodejs.
 
