@@ -1,7 +1,7 @@
 # 2 consume
 **DOBRA PRAKTYKA**: consumer.connect wywołane raz na początku procesu
 ![hero](../../docs/pics/kafka_step1_publish.png)
-1. Jeśli podczas nauki odczytasz wszystkie wiadomości w topika i tym "przesuniesz offset" to po prostu dodaj kolejna testową wiadomość via
+1. Jeśli podczas nauki odczytasz wszystkie wiadomości z topika i tym "przesuniesz offset" to po prostu dodaj kolejna testową wiadomość via
    ```shell
    npm start src/step1_produce_create_topic/producer.ts
    ```
@@ -52,7 +52,8 @@
    --reset-offsets --to-earliest --execute
    ```
    sprawdź CURRENT-OFFSET oraz LAG ponownie
-12. zapoznaj się z definicją ustawienia 'from-beggining' https://kafka.js.org/docs/consuming#a-name-from-beginning-a-frombeginning
+
+12. zapoznaj się z definicją ustawienia 'from-beginning' https://kafka.js.org/docs/consuming#a-name-from-beginning-a-frombeginning
 13. BONUS narzędzie [kcat](./cli_kcat.md)
 
 PODSUMOWANIE:

@@ -18,7 +18,7 @@ const run = async () => {
     },
   })
 
-  consumer.on('consumer.heartbeat', (ev)=> console.log(new Date(), ev))
+  // consumer.on('consumer.heartbeat', (ev)=> console.log(new Date(), ev))
 };
 
 async function gracefullyClose() {
