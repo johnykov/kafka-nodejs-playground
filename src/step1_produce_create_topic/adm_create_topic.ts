@@ -1,6 +1,6 @@
 import { kafka } from '../kafka_provider'
 /*
-npm start src/step1_produce_create_topic/adm_list_topics.ts
+npm start src/step1_produce_create_topic/adm_create_topic.ts
 */
 
 const admin = kafka.admin();

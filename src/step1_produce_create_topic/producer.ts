@@ -9,7 +9,6 @@ const producer = kafka.producer();
 const run = async () => {
   await producer.connect();
 
-
   await producer.send({
     topic: topic,
     messages: [

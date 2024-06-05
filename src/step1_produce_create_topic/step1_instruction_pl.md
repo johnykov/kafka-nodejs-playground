@@ -43,22 +43,24 @@
    ```
 9. uruchom `producer.ts`
     ```sh
-   npm start src/step1/producer.ts
+   npm start src/step1_produce_create_topic/producer.ts
    ```
 10. wylistuj topiki tym razem poprzez skrypt 
     ```sh
-    npm start src/step1/adm_list_topics.ts
+    npm start src/step1_produce_create_topic/adm_list_topics.ts
     ``` 
-5. Gdy zauważysz błąd: `"error":"This server does not host this topic-partition"` spróbuj stworzyć odpowiednio nazwany topik
-7. Topik można stworzyć na 2 sposoby manualnie albo automatycznie: 
-   - automatycznie, ustawiając w producerze `auto.create.topics` na true  
-   - manualnie skryptem `adm_create_topic`  
-   - manualnie via CLI
-8. powtórz uruchomieine `producer.ts`
-9. Uruchom polecenie `describe topic` aby odczytać metadane dot. topic
+11. Gdy zauważysz błąd: `"error":"This server does not host this topic-partition"` spróbuj stworzyć odpowiednio nazwany topik
+12. Topik można stworzyć na 2 sposoby manualnie albo automatycznie: 
+    - automatycznie, ustawiając na brokerze `KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'true'` 
+    - zobacz też domyślne ustawienie brokera [`auto.create.topics.enable`](https://kafka.apache.org/08/documentation/) na true
+    - [allowAutoTopicCreation: true](https://kafka.js.org/docs/producing) w producer
+    - manualnie skryptem `adm_create_topic`
+    - manualnie via CLI
+13. powtórz uruchomieine `producer.ts`
+14. Uruchom polecenie `describe topic` aby odczytać metadane dot. topic
    ```shell
    kafka-topics --bootstrap-server localhost:9092 --describe --topic polish.hellos
    ```
   - ile partycji, replic, ISR (in-sync-replicas)
-10. Stwórz topic z 3 partycjami i replication-factor = 1.
+15. Stwórz topic z 3 partycjami i replication-factor = 1.
 
