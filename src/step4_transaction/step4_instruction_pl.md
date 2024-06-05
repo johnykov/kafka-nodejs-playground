@@ -1,6 +1,6 @@
 1. Stwórzy topic 
    ```shell
-      kafka-topics --create --bootstrap-server localhost:29092 \
+      kafka-topics --create --bootstrap-server localhost:9092 \
       --partitions 3 --replication-factor 1 \
       --topic transactional
    ```
@@ -17,8 +17,18 @@
 ### transactional_abort
 6. Uruchom `npm start src/step4_transaction/sol/transactional_abort.ts`
 7. fix "The producer attempted to update a transaction while another concurrent operation on the same transaction was ongoing", lock or delay, single producer
-7. zweryfikuj że abort transakcji działa po uruchomieniu CURRENT-OFFSET, LOG-END-OFFSET, LAG, 
+8. zweryfikuj że abort transakcji działa po uruchomieniu CURRENT-OFFSET, LOG-END-OFFSET, LAG, 
    ```sh
-   kafka-consumer-groups --bootstrap-server localhost:29092 --group my-transactional-abort --describe
+   kafka-consumer-groups --bootstrap-server localhost:9092 --group my-transactional-abort --describe
    ```
-8. zapoznaj się [outbox pattern](./outbox.md)
+9. zwróć uwagę na numerację offset, dlaczego na topicu są parzyste offsety?
+   ```shell
+   kafka-console-consumer --topic transactional --bootstrap-server localhost:9092 \
+   --from-beginning --property print.offset=true \
+   --isolation-level=read_committed
+
+   kafka-console-consumer --topic transactional --bootstrap-server localhost:9092 \
+   --from-beginning --property print.offset=true \
+   --isolation-level=read_uncommitted
+   ```
+   porównaj offsety

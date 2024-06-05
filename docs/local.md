@@ -20,13 +20,13 @@ Aby możliwe było zwiększenie `--replication-factor 3`
 - https://github.com/confluentinc/kafka/blob/b563b6900a480b70675a24001f639d84b3167989/docker/examples/README.md
 
 ```shell
-kafka-topics --list --bootstrap-server localhost:29092
+kafka-topics --list --bootstrap-server localhost:9092
 
-kafka-topics --create --bootstrap-server localhost:29092 \
+kafka-topics --create --bootstrap-server localhost:9092 \
 --partitions 3 --replication-factor 3 \
 --topic polish_pageviews
 
-kafka-topics --bootstrap-server localhost:29092 --describe --topic polish_pageviews
+kafka-topics --bootstrap-server localhost:9092 --describe --topic polish_pageviews
 ```
 ### Test local setup when using Confluent stack
 ```sh

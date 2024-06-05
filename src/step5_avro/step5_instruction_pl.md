@@ -3,7 +3,7 @@ Link do biblioteki do enkodowania AVRO:  https://github.com/mtth/avsc
 
 1. Stwórz topic
    ```shell
-   kafka-topics --create --bootstrap-server localhost:29092 \
+   kafka-topics --create --bootstrap-server localhost:9092 \
    --partitions 1 --replication-factor 1 \
    --topic random-avro
    ```

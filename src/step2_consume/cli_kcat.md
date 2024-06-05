@@ -2,11 +2,11 @@
 - zainstaluj `kcat`
 1. wyświet topiki i partycje
   ```sh
-  kcat -b localhost:29092 -L
+  kcat -b localhost:9092 -L
   ```
 2. czytanie z topic
   ```sh
-  kcat -b localhost:29092 -t transactional
+  kcat -b localhost:9092 -t transactional
   ```
 zwróć uwagę, że wiadomości pojawiają się partycjami, np. najpierw z jednej, drugiej i trzeciej
 

@@ -1,6 +1,7 @@
 import { kafka, topic } from '../../kafka_provider'
 import { EachMessagePayload } from 'kafkajs'
 import { topicName } from '../topic'
+import { delay } from '../delay'
 /*
 npm start src/step4_transaction/sol/transactional_abort.ts
 */
@@ -13,7 +14,6 @@ const producer = kafka.producer({
 });
 process.on('SIGINT', gracefullyClose)
 process.on('SIGTERM', gracefullyClose)
-const delay = (ms:number) => new Promise(res => setTimeout(res, ms));
 
 const run = async () => {
   await consumer.connect();
@@ -32,7 +32,7 @@ const run = async () => {
         })
         console.log('tx aborting');
         await transaction.abort()
-        await delay(50)
+        await delay(1)
         // await transaction.commit()
       } catch (e) {
         console.log(e)

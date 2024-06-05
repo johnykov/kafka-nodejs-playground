@@ -1,6 +1,7 @@
 import { kafka, topic } from '../../kafka_provider'
 import { EachMessagePayload } from 'kafkajs'
 import { topicName } from '../topic'
+import { delay } from '../delay'
 /*
 npm start src/step4_transaction/sol/transactional.ts
 */
@@ -29,6 +30,8 @@ const run = async () => {
           topics: [{topic, partitions: [{partition, offset: message.offset}]}],
         })
         await transaction.commit()
+        console.log('tx commit offset:', message.offset)
+        await delay(1)
       } catch (e) {
         console.log(e)
         await transaction.abort()
