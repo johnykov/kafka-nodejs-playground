@@ -1,11 +1,12 @@
 Link do biblioteki klienta schema registry: https://kafkajs.github.io/confluent-schema-registry/
+
 Link do biblioteki do enkodowania AVRO:  https://github.com/mtth/avsc
 
 1. Zatrzymaj poprzedni cluster
       ```sh
    docker-compose -f dc.apache.multi.yml down
    ```
-2. uruchom pierwszy klaster z karapace
+2. uruchom pierwszy klaster z apache kafka z karapace
       ```sh
    docker-compose -f dc.apache.yml up
    docker exec -it kafka-1 bash
