@@ -4,12 +4,8 @@
   "namespace": "examples",
   "fields": [
     {
-      "type": "int",
-      "name": "id"
-    },
-    {
       "type": "string",
-      "name": "fullName"
+      "name": "id"
     }
   ]
 }

@@ -10,6 +10,17 @@
     {
       "type": "string",
       "name": "jobid"
+    },
+    {
+      "type": [
+        "null",
+        {
+          "type": "long",
+          "logicalType": "time-millis"
+        }
+      ],
+      "name": "submitDate",
+      "default": null
     }
   ]
 }

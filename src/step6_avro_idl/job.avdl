@@ -3,6 +3,6 @@ protocol JobProtocol {
 	record Job {
 		int duration;
 		string jobid;
-		//date submitDate;
+		union { null, time_ms } submitDate = null;
 	}
 }

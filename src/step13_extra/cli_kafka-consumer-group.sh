@@ -1,4 +1,4 @@
-# remote
+# remote upstash
 kafka-topics --list --bootstrap-server $(head -1 kafka.properties | cut -d'=' -f2) \
 --command-config kafka.properties
 
@@ -13,3 +13,7 @@ kafka-consumer-groups --bootstrap-server $(head -1 kafka.properties | cut -d'=' 
 
 kafka-consumer-groups --bootstrap-server $(head -1 kafka.properties | cut -d'=' -f2) --group console-consumer-97238 --describe \
 --command-config kafka.properties
+
+
+# remote CC
+

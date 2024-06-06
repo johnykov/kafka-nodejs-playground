@@ -16,11 +16,11 @@
    ```
 4. sprawdź utworzony topic
    ```shell
-   ./kafka-topics.sh --list --bootstrap-server localhost:19092
+   ./kafka-topics --list --bootstrap-server localhost:9092
    ```
 5. uruchom cli kafka console consumer
    ```shell
-   ./kafka-console-consumer.sh --bootstrap-server localhost:19092 --from-beginning --group cli-group --topic polish.hellos --property "print.key=true" --property print.headers=true
+   ./kafka-console-consumer --bootstrap-server localhost:9092 --from-beginning --group cli-group1 --topic random-avro --property "print.key=true" --property print.headers=true
    ```
 6. uruchom [cli kafka console producer](https://docs.confluent.io/kafka/operations-tools/kafka-tools.html)
    ```shell

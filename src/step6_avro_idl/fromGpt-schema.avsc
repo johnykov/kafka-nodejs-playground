@@ -1,0 +1,163 @@
+{
+  "namespace": "com.example",
+  "type": "record",
+  "name": "User",
+  "fields": [
+    {
+      "type": {
+        "type": "record",
+        "name": "Name",
+        "fields": [
+          {
+            "type": "string",
+            "name": "first"
+          },
+          {
+            "type": [
+              "null",
+              "string"
+            ],
+            "name": "middle",
+            "default": null
+          },
+          {
+            "type": "string",
+            "name": "last"
+          }
+        ]
+      },
+      "name": "name"
+    },
+    {
+      "type": "string",
+      "name": "username"
+    },
+    {
+      "type": "string",
+      "name": "password"
+    },
+    {
+      "type": {
+        "type": "array",
+        "items": "string"
+      },
+      "name": "emails"
+    },
+    {
+      "type": "string",
+      "name": "phoneNumber"
+    },
+    {
+      "type": {
+        "type": "record",
+        "name": "Location",
+        "fields": [
+          {
+            "type": "string",
+            "name": "street"
+          },
+          {
+            "type": "string",
+            "name": "city"
+          },
+          {
+            "type": "string",
+            "name": "state"
+          },
+          {
+            "type": "string",
+            "name": "country"
+          },
+          {
+            "type": "string",
+            "name": "zip"
+          },
+          {
+            "type": {
+              "type": "record",
+              "name": "Coordinates",
+              "fields": [
+                {
+                  "type": "double",
+                  "name": "latitude"
+                },
+                {
+                  "type": "double",
+                  "name": "longitude"
+                }
+              ]
+            },
+            "name": "coordinates"
+          }
+        ]
+      },
+      "name": "location"
+    },
+    {
+      "type": "string",
+      "name": "website"
+    },
+    {
+      "type": "string",
+      "name": "domain"
+    },
+    {
+      "type": {
+        "type": "record",
+        "name": "Job",
+        "fields": [
+          {
+            "type": "string",
+            "name": "title"
+          },
+          {
+            "type": "string",
+            "name": "descriptor"
+          },
+          {
+            "type": "string",
+            "name": "area"
+          },
+          {
+            "type": "string",
+            "name": "type"
+          },
+          {
+            "type": "string",
+            "name": "company"
+          }
+        ]
+      },
+      "name": "job"
+    },
+    {
+      "type": {
+        "type": "record",
+        "name": "CreditCard",
+        "fields": [
+          {
+            "type": "string",
+            "name": "number"
+          },
+          {
+            "type": "string",
+            "name": "cvv"
+          },
+          {
+            "type": "string",
+            "name": "issuer"
+          }
+        ]
+      },
+      "name": "creditCard"
+    },
+    {
+      "type": "string",
+      "name": "uuid"
+    },
+    {
+      "type": "string",
+      "name": "objectId"
+    }
+  ]
+}

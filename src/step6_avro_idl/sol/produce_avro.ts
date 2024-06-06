@@ -21,7 +21,7 @@ const run = async () => {
   })
 
   // Encode using the uploaded schema
-  const payload: PlJan.Job = {duration: 123, jobid: faker.string.nanoid()}
+  const payload: PlJan.Job = {duration: 123, jobid: faker.string.nanoid(), submitDate: Date.now()}
   const encodedPayload = await registry.encode(id, payload)
   await producer.connect();
   await producer.send({

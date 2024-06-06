@@ -6,7 +6,8 @@ https://avro.apache.org/docs/1.11.1/idl-language/
       --partitions 3 --replication-factor 1 \
       --topic job-avro
    ```
-1. skonwertuj AVDL do AVSC
+1. skonwertuj job.avdl, AVDL do AVSC
+2. wygeneruj przy pomocy chatGPT schemę AVRO oraz AVRO IDL dla przykładowego [JSON](./exampleUser.json)
 2. uruchom producera i konsumera korzystających ze schemy
 3. przećwicz avro schema evolution, dodaj nowe pole `date submitDate` w respekcie do https://docs.confluent.io/platform/current/schema-registry/fundamentals/schema-evolution.html BACKWARD /FORWARD
 2. union, include https://kafkajs.github.io/confluent-schema-registry/docs/schemas

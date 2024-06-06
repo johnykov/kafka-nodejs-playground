@@ -37,15 +37,19 @@ po uruchomieniu sprawdzić czy w/w obrazy dockerowe zostały poprawnie ściągni
 - wstęp do Avro (keynote)
 - Avro + schema registry [step5](./src/step5_avro/step5_instruction_pl.md)
 - NodeJS KafkaJS Avro IDL [step6](./src/step6_avro_idl/step6_instruction_pl.md)
-- kafka-avro-console-consumer example usage
+- kafka-avro-console-consumer example usage, requires
+- Zaawansowane typy: AVRO IDL [step7](./src/step7_avro_idl_adv/step7_instruction_pl.md)
 
 ### day 3
-- Zaawansowane typy: AVRO IDL [step7](./src/step7_avro_idl_adv/step7_instruction_pl.md)
-- Kafka, express [step8]
-- Zbyt wolny konsumer, który nie komituje offseta [step9]
+- demo CP oraz control-center, `dco -f prev.docker-compose.yml up`
+- Kafka confluent cloud perf [step8_1](./src/step8_1_perf/step8_instruction_pl.md)
+- Kafka, express [step8](./src/step8_kafka_express/step8_instruction_pl.md)
+- Kafka, nestjs [step9](./src/step9_kafka_nestjs/step9_instruction_pl.md)
 - NodeJS KafkaJS Transactions [step10](src/step10_transaction/step10_instruction_pl.md)
-- Outbox pattern [step11](src/step11_outbox/step11_outbox.md)
-- remote kafka cluster: upstash, confluent cloud
+- Zbyt wolny konsumer, który nie komituje offseta [step11](./src/step11_slow_consumer/step9_instruction_pl.md)
+- Outbox pattern [step12](src/step12_outbox/step12_outbox.md)
+- extra [step13](src/step13_extra/extra.md)
+- [practise exam]
 
 
 # KATA

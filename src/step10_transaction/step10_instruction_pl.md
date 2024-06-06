@@ -5,14 +5,14 @@
       --topic transactional
    ```
 2. Zwróć uwagę na konieczne ustawienia dla gwarancji EoS w dokumentacji https://kafka.js.org/docs/transactions
-2. exactly once semantics - jak jest osiągane?
+3. exactly once semantics - jak jest osiągane?
    - https://developer.confluent.io/learn/kafka-transactions-and-guarantees/
    - https://www.confluent.io/blog/transactions-apache-kafka/
    - https://www.lydtechconsulting.com/blog-kafka-idempotent-consumer.html
-3. https://github.com/tulios/kafkajs/issues/1221#issuecomment-1032433659 wyłącz autocommit w consumer
-4. zwróć uwagę na prawidłową konfigurację producenta, stwórz obiekt transaction
+4. wyłącz autocommit w consumer [tak jak zasugerowano](https://github.com/tulios/kafkajs/issues/1221#issuecomment-1032433659)
+5. zwróć uwagę na prawidłową konfigurację producenta, stwórz obiekt transaction
     - użyj operacje send, sendOffset, commit, abort
-5. napisz `consumer.ts` aby zobaczyć co jest w topic
+6. napisz `consumer.ts` aby zobaczyć co jest w topic
 
 ### transactional_abort
 6. Uruchom `npm start src/step4_transaction/sol/transactional_abort.ts`

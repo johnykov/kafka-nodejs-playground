@@ -1,6 +1,9 @@
 import { SchemaRegistry, SchemaType } from '@kafkajs/confluent-schema-registry'
 import { kafka, schemaRegistry } from '../../kafka_provider'
 import { EachMessagePayload } from 'kafkajs'
+import { promisify } from 'util'
+import fs from 'fs'
+import avro from 'avsc'
 /*
 npm start src/step5_avro/sol/consume_avro.ts
 */
@@ -8,6 +11,7 @@ npm start src/step5_avro/sol/consume_avro.ts
 const registry = new SchemaRegistry({host: schemaRegistry})
 const consumer = kafka.consumer({groupId: 'random-avro-consumer'});
 const run = async () => {
+
   await consumer.connect();
   await consumer.subscribe({topic: 'random-avro', fromBeginning: true})
   await consumer.run({
@@ -15,7 +19,7 @@ const run = async () => {
       // FIXME:
       console.log({
         key: message.key?.toString(),
-        value: message.value?.toString(),
+        value: await registry.decode(message.value!),
       })
     },
   })

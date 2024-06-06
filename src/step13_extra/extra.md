@@ -1,6 +1,4 @@
 1. upstash, confluent-cloud
-2. 
-3. Testy wydajnościowe Kafka Producer https://rustic-candytuft-314.notion.site/Publish-Subscribe-b17cfbb86a2d46f887db1b54d887afa2
 4. free o'reily books: cnfl.io/book-bundle
 5. developer.confluent.io kafka internals: https://developer.confluent.io/courses/architecture/get-started/
 5. Martin Kleppmann | Kafka Summit SF 2018 Keynote (Is Kafka a Database?)
@@ -20,6 +18,9 @@
    - https://www.confluent.io/resources/kafka-summit-new-york-2017/
    - https://www.confluent.io/resources/kafka-summit-san-francisco-2016/
     - Kafka at Netflix https://www.confluent.io/kafka-summit-san-francisco-2019/eventing-things-a-netflix-original/
-7. confluent accelerator
-8. strimizi encryption
+7. [confluent e2e encryption accelerator](https://www.confluent.io/resources/white-paper/confluent-e2e-encryption-accelerator/)
+8. [strimizi provide topic-level encryption-at-rest for Kafka](|https://github.com/strimzi/proposals/blob/main/017-kafka-topic-encryption.md) 
 9. kafka pitfails
+   - https://www.confluent.io/blog/5-common-pitfalls-when-using-apache-kafka/
+   - https://blog.softwaremill.com/7-mistakes-when-using-apache-kafka-44358cd9cd6
+10. [kafka in the cloud](https://blog.softwaremill.com/how-to-run-apache-kafka-in-the-cloud-ce66348bef0e)
