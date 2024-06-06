@@ -8,6 +8,13 @@ Docker-compose cloned from [cp-all-in-one](https://github.com/confluentinc/cp-al
 
 Example in docker-compose.classic.yml file in root dir.
 
+Warto się zapoznać https://www.confluent.io/blog/kafka-listeners-explained/.
+
+cp-kafka vs cp-server
+- `cp-kafka` - includes Kafka.
+- `cp-server` - includes role-based access control, self-balancing clusters, and more, in addition to Kafka.
+  https://docs.confluent.io/platform/current/installation/docker/config-reference.html#ak-configuration
+- 
 ### Apache Kafka and Karapache
 1. [Kafka from Apache](https://github.com/apache/kafka/blob/trunk/docker/examples/README.md)
 
