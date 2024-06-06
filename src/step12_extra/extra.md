@@ -22,3 +22,4 @@
     - Kafka at Netflix https://www.confluent.io/kafka-summit-san-francisco-2019/eventing-things-a-netflix-original/
 7. confluent accelerator
 8. strimizi encryption
+9. kafka pitfails

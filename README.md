@@ -32,16 +32,19 @@ po uruchomieniu sprawdzić czy w/w obrazy dockerowe zostały poprawnie ściągni
 - NodeJS KafkaJS Transformer [step3](./src/step3_transform/step3_instruction_pl.md)
 
 ### day 2
-- NodeJS KafkaJS Transactions [step4](./src/step4_transaction/step4_instruction_pl.md)
-- wstęp do Avro keynote
+- topic names conventions, partition per topic (keynote)
+- multi-cluster setup [step4](./src/step4_multicluster/step4_instruction_pl.md)
+- wstęp do Avro (keynote)
 - Avro + schema registry [step5](./src/step5_avro/step5_instruction_pl.md)
+- NodeJS KafkaJS Avro IDL [step6](./src/step6_avro_idl/step6_instruction_pl.md)
 - kafka-avro-console-consumer example usage
 
 ### day 3
-- NodeJS KafkaJS Avro IDL [step6](./src/step6_avro_idl/step6_instruction_pl.md)
 - Zaawansowane typy: AVRO IDL [step7](./src/step7_avro_idl_adv/step7_instruction_pl.md)
-- Kafka, express, Outbox pattern [step8]
+- Kafka, express [step8]
 - Zbyt wolny konsumer, który nie komituje offseta [step9]
+- NodeJS KafkaJS Transactions [step10](src/step10_transaction/step10_instruction_pl.md)
+- Outbox pattern [step11](src/step11_outbox/step11_outbox.md)
 - remote kafka cluster: upstash, confluent cloud
 
 

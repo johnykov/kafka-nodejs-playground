@@ -55,12 +55,6 @@
 
 12. zapoznaj się z definicją ustawienia 'from-beginning' https://kafka.js.org/docs/consuming#a-name-from-beginning-a-frombeginning
 13. BONUS narzędzie [kcat](./cli_kcat.md)
-14. uruchom cli kafka console producer / consumer
-    ```shell
-    echo "foo" | kafka-console-producer --bootstrap-server localhost:9092 --topic polish.hellos
-    #consumer
-    kafka-console-consumer --bootstrap-server localhost:9092 --from-beginning --group cli-group --topic polish.hellos
-    ```
 
 ## PODSUMOWANIE:
 - ile razy wołać consumer.connect?
