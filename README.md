@@ -41,15 +41,17 @@ po uruchomieniu sprawdzić czy w/w obrazy dockerowe zostały poprawnie ściągni
 - Zaawansowane typy: AVRO IDL [step7](./src/step7_avro_idl_adv/step7_instruction_pl.md)
 
 ### day 3
+- podsumowanie AVRO
 - demo CP oraz control-center, `dco -f prev.docker-compose.yml up`
 - Kafka confluent cloud perf [step8_1](./src/step8_1_perf/step8_instruction_pl.md)
 - Kafka, express [step8](./src/step8_kafka_express/step8_instruction_pl.md)
 - Kafka, nestjs [step9](./src/step9_kafka_nestjs/step9_instruction_pl.md)
 - NodeJS KafkaJS Transactions [step10](src/step10_transaction/step10_instruction_pl.md)
-- Zbyt wolny konsumer, który nie komituje offseta [step11](./src/step11_slow_consumer/step9_instruction_pl.md)
+- Zbyt wolny konsumer, który nie komituje offseta [step11](./src/step11_slow_consumer/step11_instruction_pl.md)
 - Outbox pattern [step12](src/step12_outbox/step12_outbox.md)
 - extra [step13](src/step13_extra/extra.md)
 - [practise exam]
+- [ankieta]
 
 
 # KATA

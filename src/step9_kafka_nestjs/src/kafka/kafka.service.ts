@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { Kafka } from 'kafkajs';
 @Injectable()
 export class KafkaService {
-  private kafka;
+  private kafka: Kafka;
   constructor() {
     this.kafka = new Kafka({
       clientId: 'my-nest-app',

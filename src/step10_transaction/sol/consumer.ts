@@ -2,7 +2,7 @@ import { kafka } from '../../kafka_provider'
 import { EachMessagePayload } from 'kafkajs'
 import { topicName } from '../topic'
 /*
-npm start src/step4_transaction/sol/consumer.ts
+npm start src/step10_transaction/sol/consumer.ts
 */
 const consumer = kafka.consumer({groupId: 'transactional-consumer'});
 const run = async () => {

@@ -13,6 +13,8 @@
 5. zwróć uwagę na prawidłową konfigurację producenta, stwórz obiekt transaction
     - użyj operacje send, sendOffset, commit, abort
 6. napisz `consumer.ts` aby zobaczyć co jest w topic
+7. uruchom `npm start src/step3_transform/continuous_producer.ts`
+8. uruchom `npm start src/step10_transaction/sol/transactional.ts`
 
 ### transactional_abort
 6. Uruchom `npm start src/step4_transaction/sol/transactional_abort.ts`
@@ -24,12 +26,12 @@
 9. zwróć uwagę na numerację offset, dlaczego na topicu są parzyste offsety? co to jest transaction marker?
    ```shell
    kafka-console-consumer --topic transactional --bootstrap-server localhost:9092 \
-   --from-beginning --property print.offset=true \
+   --from-beginning --property print.offset=true --property print.partition=true\
    --isolation-level=read_committed
 
    kafka-console-consumer --topic transactional --bootstrap-server localhost:9092 \
-   --from-beginning --property print.offset=true \
+   --from-beginning --property print.offset=true --property print.partition=true\
    --isolation-level=read_uncommitted
    ```
-   porównaj offsety
+   porównaj offsety, w drugim przypadku po uruchomieniu transactional_abort widać średnio 2x więcej offsetów na topicu
 10. Co to jest: zombie fencing https://www.confluent.io/blog/transactions-apache-kafka/, each transactional producer be assigned a unique identifier called the transactional.id

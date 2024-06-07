@@ -3,12 +3,12 @@ import { EachMessagePayload } from 'kafkajs'
 import { topicName } from '../topic'
 import { delay } from '../delay'
 /*
-npm start src/step4_transaction/sol/transactional.ts
+npm start src/step10_transaction/sol/transactional.ts
 */
 const groupId = 'my-transactional';
 const consumer = kafka.consumer({groupId, readUncommitted: false});
 const producer = kafka.producer({
-  transactionalId: 'my-transactional-producer',
+  transactionalId: 'my-transactional-producer', //unique per producer instance
   maxInFlightRequests: 1,
   idempotent: true,
 });
@@ -30,8 +30,8 @@ const run = async () => {
           topics: [{topic, partitions: [{partition, offset: message.offset}]}],
         })
         await transaction.commit()
-        console.log('tx commit offset:', message.offset)
-        await delay(1)
+        console.log(`tx commit partition: ${partition} offset:`, message.offset)
+        await delay(10)
       } catch (e) {
         console.log(e)
         await transaction.abort()
